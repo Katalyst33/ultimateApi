@@ -1,0 +1,16 @@
+# Project exclude paths
+/node_modules/
+.gitignore
+.idea/.gitignore
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/ultimateApi.iml
+app.js
+controllers/
+helpers/
+models/
+package.json
+routes/
+yarn-error.log
+yarn.lock
