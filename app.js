@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 
 mongoose.connect('mongodb://localhost/ultimate_api', {
-    useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false
+    useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false
 });
 
 
@@ -34,19 +34,19 @@ app.use((req, res, next) => {
 
 //error handler function
 app.use((err, req, res, next) => {
-    const error = app.get('env') === 'development' ? err :{};
+    const error = app.get('env') === 'development' ? err : {};
     const status = err.status || 500;
 
 
-//respond to client
-res.status(status).json({
-    error:{
-        message:error.message
-    }
-});
+    //respond to client
+    res.status(status).json({
+        error: {
+            message: error.message
+        }
+    });
 
-//respond to ourselves
-console.error(err);
+    //respond to ourselves
+    console.error(`${err}this is an error `);
 
 });
 //start the server
